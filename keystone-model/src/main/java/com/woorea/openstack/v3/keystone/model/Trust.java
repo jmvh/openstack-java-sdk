@@ -9,7 +9,6 @@ import org.codehaus.jackson.annotate.JsonProperty;
 import org.codehaus.jackson.map.annotate.JsonDeserialize;
 import org.codehaus.jackson.map.annotate.JsonRootName;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
-import com.woorea.openstack.keystone.model.Link;
 import com.woorea.openstack.v3.keystone.model.util.TrustDateDeserializer;
 import com.woorea.openstack.v3.keystone.model.util.TrustDateSerializer;
 

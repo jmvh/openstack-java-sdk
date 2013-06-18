@@ -1,5 +1,10 @@
-package com.woorea.openstack.base.client;
+package com.woorea.openstack.v3.base.client;
 
+import com.woorea.openstack.base.client.OpenStackResponse;
+import com.woorea.openstack.base.client.OpenStackResponseException;
+import com.woorea.openstack.base.client.OpenStackResponseStatus;
+import com.woorea.openstack.base.client.OpenStackSimpleTokenProvider;
+import com.woorea.openstack.base.client.OpenStackTokenProvider;
 import java.util.Properties;
 import java.util.ServiceLoader;
 
@@ -70,6 +75,10 @@ public class OpenStackClient {
 	public void property(String property, String value) {
 		properties.put(property, value);
 	}
+        
+        protected String getProperty(String property) {
+            return properties.getProperty(property);
+        }
 	
 	public void setTokenProvider(OpenStackTokenProvider tokenProvider) {
 		this.tokenProvider = tokenProvider;

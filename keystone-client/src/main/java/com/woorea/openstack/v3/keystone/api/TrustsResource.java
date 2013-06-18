@@ -44,14 +44,14 @@ public class TrustsResource {
 
 		public List byTrustor(String trustorId) {
 			List ret = new List(new StringBuilder("/OS-TRUST/trusts").toString());
-			ret.addParameter("trustor_user_id", trustorId);
+                        ret.queryParam("trustor_user_id", trustorId);
 			return ret;
 		}
 
 
 		public List byTrustee(String trusteeId) {
 			List ret = new List(new StringBuilder("/OS-TRUST/trusts").toString());
-			ret.addParameter("trustee_user_id", trusteeId);
+			ret.queryParam("trustee_user_id", trusteeId);
 			return ret;
 		}
 

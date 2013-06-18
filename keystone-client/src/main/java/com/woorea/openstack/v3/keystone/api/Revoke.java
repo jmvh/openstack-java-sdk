@@ -1,7 +1,7 @@
 package com.woorea.openstack.v3.keystone.api;
 
 import com.woorea.openstack.base.client.HttpMethod;
-import com.woorea.openstack.base.client.OpenStackRequest;
+import com.woorea.openstack.v3.base.client.OpenStackRequest;
 import com.woorea.openstack.v3.keystone.model.Token;
 
 /**

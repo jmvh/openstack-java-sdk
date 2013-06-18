@@ -1,5 +1,6 @@
-package com.woorea.openstack.base.client;
+package com.woorea.openstack.v3.base.client;
 
+import com.woorea.openstack.base.client.*;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;

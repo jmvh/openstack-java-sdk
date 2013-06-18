@@ -3,7 +3,6 @@ package com.woorea.openstack.v3.keystone.model;
 import java.io.Serializable;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
-import org.codehaus.jackson.map.annotate.JsonRootName;
 
 public abstract class Authentication implements Serializable {
 

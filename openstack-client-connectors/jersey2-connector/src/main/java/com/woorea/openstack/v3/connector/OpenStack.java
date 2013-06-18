@@ -1,9 +1,6 @@
-package org.openstack.v3.connector;
+package com.woorea.openstack.v3.connector;
 
 import java.io.IOException;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
 
 import javax.net.ssl.SSLContext;
 import javax.ws.rs.client.Client;
@@ -20,7 +17,6 @@ import org.codehaus.jackson.map.SerializationConfig;
 import org.codehaus.jackson.map.annotate.JsonRootName;
 import org.codehaus.jackson.map.annotate.JsonSerialize.Inclusion;
 import org.glassfish.jersey.SslConfigurator;
-import org.glassfish.jersey.client.ClientProperties;
 import org.glassfish.jersey.jackson.JacksonFeature;
 
 public class OpenStack {
@@ -60,6 +56,7 @@ public class OpenStack {
 			WRAPPED_MAPPER.enable(SerializationConfig.Feature.WRAP_ROOT_VALUE);
 			WRAPPED_MAPPER.enable(DeserializationConfig.Feature.UNWRAP_ROOT_VALUE);
 			WRAPPED_MAPPER.enable(DeserializationConfig.Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
+                        WRAPPED_MAPPER.disable(SerializationConfig.Feature.FAIL_ON_EMPTY_BEANS);
 
 			CLIENT.register(new JacksonFeature()).register(new ContextResolver<ObjectMapper>() {
 
