@@ -1,8 +1,8 @@
 package com.woorea.openstack.ceilometer.v2.model;
 
-import java.util.Map;
-
 import org.codehaus.jackson.annotate.JsonProperty;
+
+import java.util.Map;
 
 public class Sample {
 
@@ -17,7 +17,8 @@ public class Sample {
 	
 	@JsonProperty("counter_volume")
 	private String counterVolume;
-	
+
+    @JsonProperty("source")
 	private String source;
 	
 	@JsonProperty("project_id")
@@ -28,7 +29,8 @@ public class Sample {
 	
 	@JsonProperty("resource_id")
 	private String resource;
-	
+
+    @JsonProperty("timestamp")
 	private String timestamp;
 	
 	@JsonProperty("message_id")

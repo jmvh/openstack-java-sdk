@@ -1,8 +1,8 @@
 package com.woorea.openstack.ceilometer.v2.model;
 
-import java.util.Map;
-
 import org.codehaus.jackson.annotate.JsonProperty;
+
+import java.util.Map;
 
 public class Resource {
 	//{"resource_id": "23b55841eedd41e99d5f3f32149ca086", "timestamp": "2013-03-03T15:19:00", "project_id": "23b55841eedd41e99d5f3f32149ca086", "user_id": null, "metadata": {}}
@@ -46,5 +46,31 @@ public class Resource {
 				+ ", project=" + project + ", user=" + user + ", metadata="
 				+ metadata + "]";
 	}
-	
+
+/*    public class Metadata {
+        private String display_name;
+
+        private String ephemeral_gb;
+
+        private String disk_gb;
+
+        private String availability_zone;
+
+        private String kernel_id;
+
+        private String ramdisk_id;
+
+        private String host;
+
+        private String memory_mb;
+
+        private String instance_type;
+
+        private String vcpus;
+
+        private String root_gb;
+
+        private String image_ref;
+
+    }*/
 }
