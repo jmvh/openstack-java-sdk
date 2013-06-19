@@ -1,4 +1,4 @@
-package com.woorea.openstack.nova.api;
+package com.woorea.openstack.nova.api.extensions;
 
 
 import com.woorea.openstack.base.client.Entity;
@@ -8,11 +8,11 @@ import com.woorea.openstack.base.client.OpenStackRequest;
 import com.woorea.openstack.nova.model.Extensions;
 import com.woorea.openstack.nova.model.QuotaSet;
 
-public class QuotaSetResource {
+public class QuotaSetsExtension {
     
     private final OpenStackClient CLIENT;
     
-    public QuotaSetResource(OpenStackClient client) {
+    public QuotaSetsExtension(OpenStackClient client) {
         CLIENT = client;
     }
     
@@ -40,7 +40,6 @@ public class QuotaSetResource {
     public class Update extends OpenStackRequest<QuotaSet> {
         
         public Update(String tenantId, QuotaSet quotaSet) {
-            //super(CLIENT, HttpMethod.POST, "/v2/"+tenantId+"/os-quota-sets/"+tenantId, Entity.json(quotaSet), QuotaSet.class);
             super(CLIENT, HttpMethod.POST, "/os-quota-sets/"+tenantId, Entity.json(quotaSet), QuotaSet.class);
         }
         
@@ -49,7 +48,6 @@ public class QuotaSetResource {
     public class Defaults extends OpenStackRequest<QuotaSet> {
         
         public Defaults(String tenantId) {
-            //super(CLIENT, HttpMethod.GET, "/v2/"+tenantId+"/os-quota-sets/"+tenantId+"/defaults", null, QuotaSet.class);
             super(CLIENT, HttpMethod.GET, "/os-quota-sets/"+tenantId+"/defaults", null, QuotaSet.class);
         }
         

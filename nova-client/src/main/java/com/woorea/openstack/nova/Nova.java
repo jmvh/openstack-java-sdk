@@ -6,7 +6,7 @@ import com.woorea.openstack.base.client.OpenStackClientConnector;
 import com.woorea.openstack.nova.api.ExtensionsResource;
 import com.woorea.openstack.nova.api.FlavorsResource;
 import com.woorea.openstack.nova.api.ImagesResource;
-import com.woorea.openstack.nova.api.QuotaSetResource;
+import com.woorea.openstack.nova.api.extensions.QuotaSetsExtension;
 import com.woorea.openstack.nova.api.ServersResource;
 import com.woorea.openstack.nova.api.extensions.AggregatesExtension;
 import com.woorea.openstack.nova.api.extensions.FloatingIpsExtension;
@@ -37,7 +37,7 @@ public class Nova extends OpenStackClient {
 	
 	private final AggregatesExtension AGGREGATES;
         
-        private final QuotaSetResource QUOTAS;
+        private final QuotaSetsExtension QUOTAS;
 	
 	public Nova(String endpoint, OpenStackClientConnector connector) {
 		super(endpoint, connector);
@@ -51,7 +51,7 @@ public class Nova extends OpenStackClient {
 		SNAPSHOTS = new SnapshotsExtension(this);
 		VOLUMES = new VolumesExtension(this);
 		AGGREGATES = new AggregatesExtension(this);
-                QUOTAS = new QuotaSetResource(this);
+                QUOTAS = new QuotaSetsExtension(this);
 	}
 	
 	public Nova(String endpoint) {
@@ -94,7 +94,7 @@ public class Nova extends OpenStackClient {
 		return VOLUMES;
 	}
 
-        public QuotaSetResource quotas() {
+        public QuotaSetsExtension quotas() {
                 return QUOTAS;
         }
         
