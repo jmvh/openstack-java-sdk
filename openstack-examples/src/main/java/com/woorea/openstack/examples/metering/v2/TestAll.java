@@ -19,9 +19,9 @@ public class TestAll {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Keystone keystone = new Keystone(ExamplesConfiguration.KEYSTONE_ENDPOINT);
+		Keystone keystone = new Keystone(ExamplesConfiguration.KEYSTONE_AUTH_URL);
 		Access access = keystone.tokens()
-				.authenticate(new UsernamePassword(ExamplesConfiguration.KEYSTONE_USERNAME,ExamplesConfiguration.KEYSTONE_PASSWORD))
+				.authenticate(new UsernamePassword(ExamplesConfiguration.KEYSTONE_USERNAME, ExamplesConfiguration.KEYSTONE_PASSWORD))
 				.withTenantName("admin")
 				.execute();
 		
@@ -31,9 +31,6 @@ public class TestAll {
         ArrayList<QueryFilter> queryParams = new ArrayList<QueryFilter>();
         queryParams.add(new QueryFilter("timestamp", "ge", "2013-06-16T00:00:00"));
 
-        /**
-         * XXX:
-         */
         List<Sample> meters = Arrays.asList(ceilometer.meters().list().execute());
 
         List<Sample> samples = Arrays.asList(ceilometer.samples().list("cpu", queryParams).execute());
