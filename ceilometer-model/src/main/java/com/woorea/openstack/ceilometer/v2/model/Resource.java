@@ -46,5 +46,4 @@ public class Resource {
 				+ ", project=" + project + ", user=" + user + ", metadata="
 				+ metadata + "]";
 	}
-
 }

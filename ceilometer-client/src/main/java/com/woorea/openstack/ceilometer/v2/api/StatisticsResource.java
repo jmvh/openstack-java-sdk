@@ -9,7 +9,8 @@ import com.woorea.openstack.ceilometer.v2.model.Statistics;
 import java.util.Iterator;
 
 public class StatisticsResource {
-    private OpenStackClient client;
+
+    private final OpenStackClient client;
 
     public StatisticsResource(OpenStackClient client) {
         this.client = client;

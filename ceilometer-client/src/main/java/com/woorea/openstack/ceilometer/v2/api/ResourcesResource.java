@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 public class ResourcesResource {
 	
-	private OpenStackClient client;
+	private final OpenStackClient client;
 	
 	public ResourcesResource(OpenStackClient client) {
 		this.client = client;

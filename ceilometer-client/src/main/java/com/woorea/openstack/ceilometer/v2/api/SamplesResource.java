@@ -9,7 +9,8 @@ import com.woorea.openstack.ceilometer.v2.model.Sample;
 import java.util.Iterator;
 
 public class SamplesResource {
-    private OpenStackClient client;
+
+    private final OpenStackClient client;
 
     public SamplesResource(OpenStackClient client) {
         this.client = client;
