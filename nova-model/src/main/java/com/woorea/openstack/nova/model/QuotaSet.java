@@ -78,7 +78,10 @@ public class QuotaSet {
     }
     
     public Integer getGigabytes() {
-        return gigabytes;
+        if(gigabytes != null) {
+            return gigabytes;
+        }
+        return 0;
     }
     
     public void setGigabytes(Integer gigabytes) {

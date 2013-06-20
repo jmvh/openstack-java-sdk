@@ -27,16 +27,7 @@ public class JaxRs20Connector implements OpenStackClientConnector {
     
     @Override
     public <T> OpenStackResponse request(OpenStackRequest<T> request) {
-        Iterator<Map.Entry<String, List<Object>>> iter = request.queryParams().entrySet().iterator();
-        UriBuilder ub = UriBuilder.fromUri(request.endpoint());
-        ub.path(request.path());
-        while(iter.hasNext()) {
-            Map.Entry<String, List<Object>> param = iter.next();
-            for(Object obj : param.getValue()) {
-                ub.queryParam(param.getKey(), obj);
-            }
-        }
-        WebTarget target = client.target(ub);
+        WebTarget target = client.target(request.endpoint()).path(request.path());
         
         for(Map.Entry<String, List<Object> > entry : request.queryParams().entrySet()) {
             for (Object o : entry.getValue()) {

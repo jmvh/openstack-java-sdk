@@ -33,6 +33,8 @@
 		<module>ceilometer-model</module>
 		<module>ceilometer-client</module>
 		<module>openstack-client-connectors</module>
+		<module>cinder-client</module>
+		<module>cinder-model</module>
 	</modules>
 
 	<profiles>

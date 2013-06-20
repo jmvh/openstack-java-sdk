@@ -31,7 +31,6 @@ public class QuotaSetsExtension {
     public class Show extends OpenStackRequest<QuotaSet> {
         
         public Show(String tenantId) {
-            //super(CLIENT, HttpMethod.GET, "/v2/"+tenantId+"/os-quota-sets/"+tenantId, null, QuotaSet.class);
             super(CLIENT, HttpMethod.GET, "/os-quota-sets/"+tenantId, null, QuotaSet.class);
         }
         
