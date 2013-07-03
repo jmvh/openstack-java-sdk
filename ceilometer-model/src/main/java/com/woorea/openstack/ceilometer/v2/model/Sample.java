@@ -1,5 +1,6 @@
 package com.woorea.openstack.ceilometer.v2.model;
 
+import java.util.Date;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 import java.util.Map;
@@ -31,7 +32,7 @@ public class Sample {
 	private String resource;
 
     @JsonProperty("timestamp")
-	private String timestamp;
+	private Date timestamp;
 	
 	@JsonProperty("message_id")
 	private String message;
@@ -71,7 +72,7 @@ public class Sample {
 		return resource;
 	}
 
-	public String getTimestamp() {
+	public Date getTimestamp() {
 		return timestamp;
 	}
 
