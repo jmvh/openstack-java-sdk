@@ -13,6 +13,7 @@ public class QuotaSet {
     private String projectId;
     private int gigabytes;
     private int volumes;
+    private int snapshots;
 
     public String getProjectId() {
         return projectId;
@@ -24,5 +25,9 @@ public class QuotaSet {
 
     public int getVolumes() {
         return volumes;
+    }
+
+    public int getSnapshots() {
+        return snapshots;
     }
 }
